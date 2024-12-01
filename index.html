@@ -14,6 +14,13 @@
     <p>there isn't much yet but I'm working on it</p>
     <p>we are aciveing what we want to so people can access this Information even if its oijnel sources goes down as long as we keep this website up</p>
     <p>also we are probly going to do random stuff becuse why not</p>
-  </body>
+
+    <h2>Lates update</h2>
+    <div id="latest-push"></div>
+
+    <script> fetch('https://api.github.com/repos/Mine1115/mine1115.github.io/commits?sha=main') .then(response => response.json()) .then(data => { const latestCommit = data[0]; document.getElementById('latest-push').innerHTML = ` <p><strong>Commit Message:</strong> ${latestCommit.commit.message}</p> <p><strong>Author:</strong> ${latestCommit.commit.author.name}</p> <p><strong>Date:</strong> ${latestCommit.commit.author.date}</p> <p><strong>URL:</strong> <a href="${latestCommit.html_url}">${latestCommit.html_url}</a></p> `; }) .catch(error => console.error('Error:', error)); </script>
+</body>
+</html>
+
 
 </html>
