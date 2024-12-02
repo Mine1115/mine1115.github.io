@@ -16,7 +16,7 @@
     <p>also we are probly going to do random stuff becuse why not</p>
 
     <h2>Lates update</h2>
-    <div id="latest-push"></div>
+    <div id="latest-push" style="background-color:darkgrey; border-radius: 25px; padding: 10px; border-color: black;"></div>
 
     <script> fetch('https://api.github.com/repos/Mine1115/mine1115.github.io/commits?sha=main') .then(response => response.json()) .then(data => { const latestCommit = data[0]; document.getElementById('latest-push').innerHTML = ` <p><strong>Commit Message:</strong> ${latestCommit.commit.message}</p> <p><strong>Author:</strong> ${latestCommit.commit.author.name}</p> <p><strong>Date:</strong> ${latestCommit.commit.author.date}</p> <p><strong>URL:</strong> <a href="${latestCommit.html_url}">${latestCommit.html_url}</a></p> `; }) .catch(error => console.error('Error:', error)); </script>
 </body>
